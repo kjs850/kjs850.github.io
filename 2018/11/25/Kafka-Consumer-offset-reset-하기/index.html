@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>Kafka Consumer offset reset 하기 | SeoWon💕, SeoHun💕, EunA💕</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="">
+    
+    <meta name="description" content="date: 2018-11-22 16:25:22 그룹 지정하여 토픽 수신123456789101112 ✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic test --group testGroup --from-beginningaaab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kafka Consumer offset reset 하기">
+<meta property="og:url" content="http://kjs850.github.io/2018/11/25/Kafka-Consumer-offset-reset-하기/index.html">
+<meta property="og:site_name" content="SeoWon💕, SeoHun💕, EunA💕">
+<meta property="og:description" content="date: 2018-11-22 16:25:22 그룹 지정하여 토픽 수신123456789101112 ✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic test --group testGroup --from-beginningaaab">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-25T14:56:30.190Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kafka Consumer offset reset 하기">
+<meta name="twitter:description" content="date: 2018-11-22 16:25:22 그룹 지정하여 토픽 수신123456789101112 ✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic test --group testGroup --from-beginningaaab">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://www.linkedin.com/in/jaesungko">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Kafka-Consumer-offset-reset-하기" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Kafka Consumer offset reset 하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" class="article-date">
+            <time datetime="2018-11-25T14:56:30.189Z" itemprop="datePublished">2018-11-25</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>date: 2018-11-22 16:25:22</p>
+<h2 id="그룹-지정하여-토픽-수신"><a href="#그룹-지정하여-토픽-수신" class="headerlink" title="그룹 지정하여 토픽 수신"></a>그룹 지정하여 토픽 수신</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> ✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic <span class="built_in">test</span> --group testGroup --from-beginning</span><br><span class="line">aaa</span><br><span class="line">bbb</span><br><span class="line">ccc</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 컨슈머 그룹별 offset 상태 확인</span></span><br><span class="line">```bash</span><br><span class="line">✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-consumer-groups --bootstrap-server localhost:9092 --group testGroup --describe</span><br><span class="line"></span><br><span class="line">TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                     HOST            CLIENT-ID</span><br><span class="line"><span class="built_in">test</span>            0          3               3               0               consumer-1-39ea110a-7f65-4ec3-8a9d-22c82d8be469 /172.26.113.148 consumer-1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>TOPIC: 토픽 이름</li>
+<li>PARTITION: consumer group 내의 각 consumer가 할당된 파티션 번호</li>
+<li>CURRENT-OFFSET: 현재 consumer group의 consumer가 각 파티션에서 마지막으로 offset을 commit한 값</li>
+<li>LOG-END-OFFSET: producer쪽에서 마지막으로 생성한 레코드의 offset</li>
+<li>LAG: LOG-END-OFFSET에서 CURRENT-OFFSET를 뺀 값.</li>
+</ul>
+<h2 id="컨슈머-그룹의-offset-reset"><a href="#컨슈머-그룹의-offset-reset" class="headerlink" title="컨슈머 그룹의 offset reset"></a>컨슈머 그룹의 offset reset</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-consumer-groups --bootstrap-server localhost:9092 --group testGroup --topic <span class="built_in">test</span> --reset-offsets --to-earliest --execute</span><br></pre></td></tr></table></figure>
+<ul>
+<li>–topic 대신 –all-topics를 지정하면 모든 토픽에 대해서 실행이 가능하다.</li>
+<li><p>–execute 옵션을 제거하고, –dry-run옵션으로 실행하면 실제 반영되지 않고 어떻게 변할지 결과만 출력하는 dry run이 가능하다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~  kafka-consumer-groups --bootstrap-server localhost:9092 --group testGroup --topic <span class="built_in">test</span> --reset-offsets --to-earliest --dry-run</span><br><span class="line"></span><br><span class="line">TOPIC                          PARTITION  NEW-OFFSET</span><br><span class="line"><span class="built_in">test</span>                           0          0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>주의사항: 해당 그룹의 컨슈머를 멈추고 리셋해야 한다.(consumer group이 실행중인 상태에 offset reset을 진행하는 경우 reset은 실패한다.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~  kafka-consumer-groups --bootstrap-server localhost:9092 --group testGroup --topic <span class="built_in">test</span> --reset-offsets --to-earliest --dry-run</span><br><span class="line">Error: Assignments can only be reset <span class="keyword">if</span> the group <span class="string">'testGroup'</span> is inactive, but the current state is Stable.</span><br><span class="line"></span><br><span class="line">TOPIC                          PARTITION  NEW-OFFSET</span><br><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~ </span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="샘플"><a href="#샘플" class="headerlink" title="샘플"></a>샘플</h2><p>기존의 프로듀서가 지속적으로 메시지 생산<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-producer --broker-list localhost:9092 --topic <span class="built_in">test</span></span><br><span class="line">&gt;aaa</span><br><span class="line">&gt;bbb</span><br><span class="line">&gt;ccc</span><br><span class="line">&gt;ddd</span><br><span class="line">&gt;eee</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>중간부터 컨슘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic <span class="built_in">test</span> --group testGroup</span><br><span class="line">ddd</span><br><span class="line">eee</span><br></pre></td></tr></table></figure></p>
+<p>리셋 후 처음부터 컨슘하도록 변경<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jake.ko@jakekoui-MacBook-Pro  ~  kafka-consumer-groups --bootstrap-server localhost:9092 --group testGroup --topic <span class="built_in">test</span> --reset-offsets --to-earliest --execute</span><br><span class="line"></span><br><span class="line">TOPIC                          PARTITION  NEW-OFFSET</span><br><span class="line"><span class="built_in">test</span>                           0          0</span><br><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~ </span><br></pre></td></tr></table></figure></p>
+<p>컨슘 재개 후 결과 (offset 리셋되어, 처음부터 컨슘한다.)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> ✘ jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic <span class="built_in">test</span> --group testGroup</span><br><span class="line">aaa</span><br><span class="line">bbb</span><br><span class="line">ccc</span><br><span class="line">ddd</span><br><span class="line">eee</span><br></pre></td></tr></table></figure></p>
+<p>오프셋의 위치를 재설정하기 위한 아래와같은 상세 옵션들이 있다.</p>
+<ul>
+<li>–shift-by &lt;Long: number-of-offsets&gt; 형식 (+/- 모두 가능)</li>
+<li>–to-offset &lt;Long: offset&gt;</li>
+<li>–to-current</li>
+<li>–by-duration &lt;String: duration&gt; : 형식 ‘PnDTnHnMnS’</li>
+<li>–to-datetime &lt;String: datetime&gt; : 형식 ‘YYYY-MM-DDTHH:mm:SS.sss’</li>
+<li>–to-latest</li>
+<li>–to-earliest</li>
+</ul>
+<p>–to-datetime의 경우 kafka에서 데이터를 읽어서 다른곳에 저장하는 중에 데이터 유실 또는 중복 write 등이 발생한 경우에 날짜 단위로 데이터를 다시 불러와서 재처리하고 싶은 경우 매우 유용하다.</p>
+<h2 id="CLI가-아닌-Java-코드로-offset-reset하기"><a href="#CLI가-아닌-Java-코드로-offset-reset하기" class="headerlink" title="CLI가 아닌 Java 코드로 offset reset하기"></a>CLI가 아닌 Java 코드로 offset reset하기</h2><p>Kafka의 경우 사용 형태에 따라 Consumer API와 Stream API 두가지를 제공한다.</p>
+<ul>
+<li>Consumer API<ul>
+<li>개별 이벤트 단위의 low level 처리가 필요한 경우</li>
+<li>datetime, offset 을 지정해서 원하는 대로 reset 가능</li>
+</ul>
+</li>
+<li>Stream API<ul>
+<li>Stream processing이 필요한 경우</li>
+<li>offset reset 기능 없음 (위에서 언급한 CLI tool을 사용해야함)</li>
+</ul>
+</li>
+</ul>
+<p>Consumer API를 사용할때 Java코드 레벨에서 programmatical하게 offset을 리셋하는 방법은 다음과 같다.<br>먼저 KafkaConsumer가 생성한 후에<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KafkaConsumer&lt;Object, Object&gt; consumer = new KafkaConsumer&lt;&gt;(properties, keyDeser, valueDeser);</span><br></pre></td></tr></table></figure></p>
+<p>consumer loop에 진입하여 consumer.poll()을 부르기 전에, 생성된 consumer 객체에 대해 offset을 변경하는 다음 함수들을 호출하여 offset을 원하는 대로 설정할 수 있다.</p>
+<ul>
+<li>seekToBeginning: earliest로 reset</li>
+<li>seekToEnd: latest로 reset</li>
+<li>seek : 지정 offset으로 reset</li>
+<li>offsetsForTimes: datetime 기준으로 reset</li>
+</ul>
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+<li><a href="https://www.letmecompile.com/kafka-consumer-offset-reset/" target="_blank" rel="noopener">https://www.letmecompile.com/kafka-consumer-offset-reset/</a></li>
+<li><a href="https://gist.github.com/marwei/cd40657c481f94ebe273ecc16601674b" target="_blank" rel="noopener">https://gist.github.com/marwei/cd40657c481f94ebe273ecc16601674b</a></li>
+<li><a href="http://blog.sysco.no/integration/kafka-rewind-consumers-offset/" target="_blank" rel="noopener">http://blog.sysco.no/integration/kafka-rewind-consumers-offset/</a></li>
+</ul>
+<p>tags: kafka, offset</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://kjs850.github.io/2018/11/25/Kafka-Consumer-offset-reset-하기/" data-id="cjox4v0py0000gvypoje2xls7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/@kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/22/kafka-설치-및-구동/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">kafka 설치 및 구동</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" class="title">Kafka Consumer offset reset 하기</a></p>
+                            <p class="item-date"><time datetime="2018-11-25T14:56:30.189Z" itemprop="datePublished">2018-11-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/22/kafka-설치-및-구동/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/22/kafka-설치-및-구동/" class="title">kafka 설치 및 구동</a></p>
+                            <p class="item-date"><time datetime="2018-11-22T07:28:12.775Z" itemprop="datePublished">2018-11-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/22/kafka-streams는-무엇인가/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../images/pipe.jpg)" alt="kafka streams는 무엇인가?" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/22/kafka-streams는-무엇인가/" class="title">kafka streams는 무엇인가?</a></p>
+                            <p class="item-date"><time datetime="2018-11-22T04:19:54.220Z" itemprop="datePublished">2018-11-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/21/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/21/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-11-21T08:01:00.716Z" itemprop="datePublished">2018-11-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 고재성</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'git-blog-2';
+    
+    
+    var disqus_url = 'http://kjs850.github.io/2018/11/25/Kafka-Consumer-offset-reset-하기/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
