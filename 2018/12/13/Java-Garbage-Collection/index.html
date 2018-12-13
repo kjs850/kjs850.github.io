@@ -6,23 +6,25 @@
     
 
     
-    <title>kafka 설치 및 구동 | SeoWon💕, SeoHun💕, EunA💕</title>
+    <title>Java Garbage Collection | SeoWon💕, SeoHun💕, EunA💕</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="">
     
-    <meta name="description" content="date: 2018-11-22 14:35:57 설치1234567891011121314151617181920&amp;gt; brew install kafka..... 생략...   brew services start kafkaOr, if you don&apos;t want/need a background service you can just run:  zookeeper-se">
+    <meta name="description" content="date: 2018-12-11 14:17:31 가비지 컬렉션 과정 - Generational Garbage Collection가비지 컬렉터는 두 가지 가설 하에 만들어졌다  대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다. 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.  이러한 가설을 ‘weak generational hy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kafka 설치 및 구동">
-<meta property="og:url" content="http://kjs850.github.io/2018/11/22/kafka-설치-및-구동/index.html">
+<meta property="og:title" content="Java Garbage Collection">
+<meta property="og:url" content="http://kjs850.github.io/2018/12/13/Java-Garbage-Collection/index.html">
 <meta property="og:site_name" content="SeoWon💕, SeoHun💕, EunA💕">
-<meta property="og:description" content="date: 2018-11-22 14:35:57 설치1234567891011121314151617181920&amp;gt; brew install kafka..... 생략...   brew services start kafkaOr, if you don&apos;t want/need a background service you can just run:  zookeeper-se">
+<meta property="og:description" content="date: 2018-12-11 14:17:31 가비지 컬렉션 과정 - Generational Garbage Collection가비지 컬렉터는 두 가지 가설 하에 만들어졌다  대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다. 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.  이러한 가설을 ‘weak generational hy">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-22T07:28:12.775Z">
+<meta property="og:image" content="http://kjs850.github.io/2018/12/13/images/cms_gc.jpeg">
+<meta property="og:updated_time" content="2018-12-13T06:02:17.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kafka 설치 및 구동">
-<meta name="twitter:description" content="date: 2018-11-22 14:35:57 설치1234567891011121314151617181920&amp;gt; brew install kafka..... 생략...   brew services start kafkaOr, if you don&apos;t want/need a background service you can just run:  zookeeper-se">
+<meta name="twitter:title" content="Java Garbage Collection">
+<meta name="twitter:description" content="date: 2018-12-11 14:17:31 가비지 컬렉션 과정 - Generational Garbage Collection가비지 컬렉터는 두 가지 가설 하에 만들어졌다  대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다. 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.  이러한 가설을 ‘weak generational hy">
+<meta name="twitter:image" content="http://kjs850.github.io/2018/12/13/images/cms_gc.jpeg">
     
 
     
@@ -134,14 +136,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-kafka-설치-및-구동" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-Java-Garbage-Collection" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        kafka 설치 및 구동
+        Java Garbage Collection
         </h1>
     
 
@@ -151,8 +153,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/11/22/kafka-설치-및-구동/" class="article-date">
-            <time datetime="2018-11-22T07:28:12.775Z" itemprop="datePublished">2018-11-22</time>
+        <a href="/2018/12/13/Java-Garbage-Collection/" class="article-date">
+            <time datetime="2018-12-13T06:02:17.422Z" itemprop="datePublished">2018-12-13</time>
         </a>
     </div>
 
@@ -163,17 +165,62 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>date: 2018-11-22 14:35:57</p>
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt; brew install kafka</span><br><span class="line">..... </span><br><span class="line">생략</span><br><span class="line">... </span><br><span class="line">  brew services start kafka</span><br><span class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need a background service you can just run:</span></span><br><span class="line"><span class="string">  zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp; kafka-server-start /usr/local/etc/kafka/server.properties</span></span><br><span class="line"><span class="string">==&gt; Summary</span></span><br><span class="line"><span class="string">🍺  /usr/local/Cellar/kafka/2.0.0: 160 files, 46.8MB</span></span><br><span class="line"><span class="string">==&gt; Caveats</span></span><br><span class="line"><span class="string">==&gt; zookeeper</span></span><br><span class="line"><span class="string">To have launchd start zookeeper now and restart at login:</span></span><br><span class="line"><span class="string">  brew services start zookeeper</span></span><br><span class="line"><span class="string">Or, if you don'</span>t want/need a background service you can just run:</span><br><span class="line">  zkServer start</span><br><span class="line">==&gt; kafka</span><br><span class="line">To have launchd start kafka now and restart at login:</span><br><span class="line">  brew services start kafka</span><br><span class="line">Or, <span class="keyword">if</span> you don<span class="string">'t want/need a background service you can just run:</span></span><br><span class="line"><span class="string">  zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp; kafka-server-start /usr/local/etc/kafka/server.properties</span></span><br></pre></td></tr></table></figure>
-<h2 id="주키퍼-구동"><a href="#주키퍼-구동" class="headerlink" title="주키퍼 구동"></a>주키퍼 구동</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jake.ko@jakekoui-MacBook-Pro  ~  zookeeper-server-start /usr/<span class="built_in">local</span>/etc/kafka/zookeeper.properties</span><br><span class="line">[2018-11-22 14:39:11,550] INFO Reading configuration from: /usr/<span class="built_in">local</span>/etc/kafka/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)</span><br><span class="line">[2018-11-22 14:39:11,553] INFO autopurge.snapRetainCount <span class="built_in">set</span> to 3 (org.apache.zookeeper.server.DatadirCleanupManager)</span><br><span class="line">[2018-11-22 14:39:11,553] INFO autopurge.purgeInterval <span class="built_in">set</span> to 0 (org.apache.zookeeper.server.DatadirCleanupManager)</span><br><span class="line">[2018-11-22 14:39:11,555] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)</span><br><span class="line">[2018-11-22 14:39:11,555] WARN Either no config or no quorum defined <span class="keyword">in</span> config, running  <span class="keyword">in</span> standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)</span><br><span class="line">[2018-11-22 14:39:11,571] INFO Reading configuration from: /usr/<span class="built_in">local</span>/etc/kafka/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)</span><br><span class="line">생략...</span><br></pre></td></tr></table></figure>
-<h2 id="카프카-구동"><a href="#카프카-구동" class="headerlink" title="카프카 구동"></a>카프카 구동</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">jake.ko@jakekoui-MacBook-Pro  ~  kafka-server-start /usr/<span class="built_in">local</span>/etc/kafka/server.properties</span><br><span class="line">[2018-11-22 14:39:25,676] INFO Registered kafka:<span class="built_in">type</span>=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)</span><br><span class="line">[2018-11-22 14:39:26,191] INFO starting (kafka.server.KafkaServer)</span><br><span class="line">[2018-11-22 14:39:26,192] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)</span><br><span class="line">[2018-11-22 14:39:26,208] INFO [ZooKeeperClient] Initializing a new session to localhost:2181. (kafka.zookeeper.ZooKeeperClient)</span><br><span class="line">[2018-11-22 14:39:26,215] INFO Client environment:zookeeper.version=3.4.13-2d71af4dbe22557fda74f9a9b4309b15a7487f03, built on 06/29/2018 00:39 GMT (org.apache.zookeeper.ZooKeeper)</span><br><span class="line">[2018-11-22 14:39:26,215] INFO Client environment:host.name=172.26.113.148 (org.apache.zookeeper.ZooKeeper)</span><br><span class="line">[2018-11-22 14:39:26,215] INFO Client environment:java.version=1.8.0_161 (org.apache.zookeeper.ZooKeeper)</span><br><span class="line">[2018-11-22 14:39:26,215] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)</span><br><span class="line">[2018-11-22 14:39:26,215] INFO Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre (org.apache.zookeeper.ZooKeeper)</span><br><span class="line">생략...</span><br></pre></td></tr></table></figure>
-<h2 id="토픽-생성"><a href="#토픽-생성" class="headerlink" title="토픽 생성"></a>토픽 생성</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jake.ko@jakekoui-MacBook-Pro  ~  kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <span class="built_in">test</span></span><br><span class="line">Created topic <span class="string">"test"</span>.</span><br></pre></td></tr></table></figure>
-<h2 id="토픽-보내기-produce"><a href="#토픽-보내기-produce" class="headerlink" title="토픽 보내기(produce)"></a>토픽 보내기(produce)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-producer --broker-list localhost:9092 --topic <span class="built_in">test</span></span><br><span class="line">&gt;aaa</span><br><span class="line">&gt;bbb</span><br><span class="line">&gt;ccc</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="토픽-수신-consume"><a href="#토픽-수신-consume" class="headerlink" title="토픽 수신(consume)"></a>토픽 수신(consume)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> jake.ko@jakekoui-MacBook-Pro  ~  kafka-console-consumer --bootstrap-server localhost:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line">aaa</span><br><span class="line">bbb</span><br><span class="line">ccc</span><br></pre></td></tr></table></figure>
-<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
-<li><a href="https://medium.com/@Ankitthakur/apache-kafka-installation-on-mac-using-homebrew-a367cdefd273" target="_blank" rel="noopener">https://medium.com/@Ankitthakur/apache-kafka-installation-on-mac-using-homebrew-a367cdefd273</a></li>
+            <p>date: 2018-12-11 14:17:31</p>
+<h2 id="가비지-컬렉션-과정-Generational-Garbage-Collection"><a href="#가비지-컬렉션-과정-Generational-Garbage-Collection" class="headerlink" title="가비지 컬렉션 과정 - Generational Garbage Collection"></a>가비지 컬렉션 과정 - Generational Garbage Collection</h2><p>가비지 컬렉터는 두 가지 가설 하에 만들어졌다</p>
+<ul>
+<li>대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다.</li>
+<li>오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.</li>
 </ul>
-<p>tags: kafka, mac, install</p>
+<p>이러한 가설을 ‘weak generational hypothesis’라 한다.</p>
+<p>이 가설의 장점을 최대한 살리기 위해서 HotSpot VM에서는 크게 2개로 물리적 공간을 나누었다.<br>둘로 나눈 공간이 Young 영역과 Old 영역이다.</p>
+<ul>
+<li><p>Young 영역(Yong Generation 영역):<br>새롭게 생성한 객체의 대부분이 여기에 위치한다.<br>대부분의 객체가 금방 접근 불가능 상태가 되기 때문에 매우 많은 객체가 young 영역에<br>생성되었다가 사라진다.<br>이 영역에서 객체가 사라질때 Minor GC가 발생한다고 말한다.</p>
+</li>
+<li><p>Old 영역(Old Generation 영역):<br>접근 불가능 상태로 되지 않아 Young 영역에서 살아남은 객체가 여기로 복사된다.<br>대부분 Young영역보다 크게 할당하며, 크기가 큰 만큼 Young 영역보다 GC는 적게 발생한다.<br>이 영역에서 객체가 사라질 때 Major GC(혹은 Full GC)가 발생한다고 말한다.</p>
+</li>
+<li><p>Permanent Generation 영역(이하 Perm 영역)<br>Method Area(메소드 영역, 클래스 파일의 바이트 코드들이 로드되는 곳)라고도 한다.<br>객체나 억류(intern)된 문자열 정보를 저장하는 곳이며, Old 영역에서 살아남은 객체가 영원히 남아 있는곳은 절대 아니다.<br>이 영역에서 GC가 발생할수도 있는데, 여기서 GC가 발생해도 Major GC의 횟수에 포함된다.</p>
+</li>
+</ul>
+<p>“Old 영역에 있는 객체가 Young 영역의 객체를 참조하는 경우가 있을 때에는 어떻게 처리될까?”<br>카드 테이블이 존재하고 카드 테이블에는 Old영역에 있는 객체가 Young영역의 객체를 참조할 때마다 정보를 표시한다.<br>Young영역의 GC를 실행할때는 Old영역에 있는 모든 객체의 참조를 확인하지 않고, 카드 테이블만 뒤져서 GC 대상인지 식별한다.<br>카드 테이블은 write barrier를 사용하여 관리한다</p>
+<h2 id="Young-영역의-구성"><a href="#Young-영역의-구성" class="headerlink" title="Young 영역의 구성"></a>Young 영역의 구성</h2><p>3개로 나뉨</p>
+<ul>
+<li>Eden 영역</li>
+<li>Survivor 영역 2개</li>
+</ul>
+<p>아래와 같은 과정을 거친다.</p>
+<ul>
+<li>새로 생성한 대부분의 객체는 Eden 영역에 위치한다.</li>
+<li>Eden 영역에서 GC가 한 번 발생한 후 살아남은 객체는 Survivor 영역 중 하나로 이동된다.</li>
+<li>Eden 영역에서 GC가 발생하면 이미 살아남은 객체가 존재하는 Survivor 영역으로 객체가 계속 쌓인다.</li>
+<li>하나의 Survivor 영역이 가득 차게 되면 그 중에서 살아남은 객체를 다른 Survivor 영역으로 이동한다. 그리고 가득 찬 Survivor 영역은 아무 데이터도 없는 상태로 된다.</li>
+<li>이 과정을 반복하다가 계속해서 살아남아 있는 객체는 Old 영역으로 이동하게 된다.</li>
+</ul>
+<p>HotSpot VM에서는 보다 빠른 메모리 할당을 위해서 두 가지 기술을 사용한다</p>
+<ul>
+<li>bump-the-pointer</li>
+<li>TLABs(Thread-Local Allocation Buffers)</li>
+</ul>
+<h2 id="Old-영역에-대한-GC"><a href="#Old-영역에-대한-GC" class="headerlink" title="Old 영역에 대한 GC"></a>Old 영역에 대한 GC</h2><p>GC 방식은 JDK 7을 기준으로 5가지 방식이 있다.</p>
+<ul>
+<li>Serial GC :  운영 서버에서 절대 사용하면 안 되는 방식이 Serial GC다. Serial GC는 데스크톱의 CPU 코어가 하나만 있을 때 사용하기 위해서 만든 방식이다. Serial GC를 사용하면 애플리케이션의 성능이 많이 떨어진다.</li>
+<li>Parallel GC</li>
+<li>Parallel Old GC(Parallel Compacting GC)</li>
+<li>Concurrent Mark &amp; Sweep GC(이하 CMS)</li>
+<li>G1(Garbage First) GC</li>
+</ul>
+<h2 id="Serial-GC-XX-UseSerialGC"><a href="#Serial-GC-XX-UseSerialGC" class="headerlink" title="Serial GC (-XX:+UseSerialGC)"></a>Serial GC (-XX:+UseSerialGC)</h2><p>Young 영역에서의 GC는 앞 절에서 설명한 방식을 사용한다.(Young 영역의 GC를 실행할 때에는 Old 영역에 있는 모든 객체의 참조를 확인하지 않고, 이 카드 테이블만 뒤져서 GC 대상인지 식별한다.)<br>Old 영역의 GC는 mark-sweep-compact이라는 알고리즘을 사용한다.<br>mark : Old 영역에 살아 있는 객체를 식별<br>sweep : 힙(heap)의 앞 부분부터 확인하여 살아 있는 것만 남긴다<br>compaction : 각 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 없는 부분으로 나눈다</p>
+<h2 id="Parallel-GC-XX-UseParallelGC"><a href="#Parallel-GC-XX-UseParallelGC" class="headerlink" title="Parallel GC (-XX:+UseParallelGC)"></a>Parallel GC (-XX:+UseParallelGC)</h2><p>Serial GC와 기본적인 알고리즘은 같다.<br>그러나 Serial GC는 GC를 처리하는 스레드가 하나인 것에 비해, Parallel GC는 GC를 처리하는 쓰레드가 여러 개이다.<br>Parallel GC는 메모리가 충분하고 코어의 개수가 많을 때 유리하다.<br>Throughput GC</p>
+<h2 id="Parallel-Old-GC-XX-UseParallelOldGC"><a href="#Parallel-Old-GC-XX-UseParallelOldGC" class="headerlink" title="Parallel Old GC(-XX:+UseParallelOldGC)"></a>Parallel Old GC(-XX:+UseParallelOldGC)</h2><p>Parallel Old GC는 JDK 5 update 6부터 제공한 GC 방식<br>Parallel GC와 비교하여 Old 영역의 GC 알고리즘만 다르다<br>Mark-Summary-Compaction<br>Summary : 앞서 GC를 수행한 영역에 대해서 별도로 살아 있는 객체를 식별한다.</p>
+<h2 id="CMS-GC-XX-UseConcMarkSweepGC"><a href="#CMS-GC-XX-UseConcMarkSweepGC" class="headerlink" title="CMS GC (-XX:+UseConcMarkSweepGC)"></a>CMS GC (-XX:+UseConcMarkSweepGC)</h2><p><img src="../images/cms_gc.jpeg" alt=""><br>초기 Initial Mark 단계에서는 ….클래스 로더에서 가장 가까운 객체 중 살아 있는 객체만 찾는 것으로 끝낸다.<br>따라서, 멈추는 시간은 매우 짧다.<br>그리고 Concurrent Mark 단계에서는 방금 살아있다고 확인한 객체에서 참조하고 있는 객체들을 따라가면서 확인한다.<br>이 단계의 특징은 다른 스레드가 실행 중인 상태에서 동시에 진행된다는 것이다.<br>그 다음 Remark 단계에서는….  Concurrent Mark 단계에서 새로 추가되거나 참조가 끊긴 객체를 확인한다.<br>마지막으로 Concurrent Sweep 단계에서는 쓰레기를 정리하는 작업을 실행한다.<br>이 작업도 다른 스레드가 실행되고 있는 상황에서 진행한다.</p>
+<p>이러한 단계로 진행되는 GC 방식이기 때문에 stop-the-world 시간이 매우 짧다.<br>모든 애플리케이션의 응답 속도가 매우 중요할 때 CMS GC를 사용<br>Low Latency GC라고도 부른다.</p>
+<p>그런데 CMS GC는 stop-the-world 시간이 짧다는 장점에 반해 다음과 같은 단점이 존재한다.</p>
+<p>다른 GC 방식보다 메모리와 CPU를 더 많이 사용한다.<br>Compaction 단계가 기본적으로 제공되지 않는다.<br>그리고 조각난 메모리가 많아 Compaction 작업을 실행하면 다른 GC 방식의 stop-the-world 시간보다 stop-the-world 시간이 더 길기 때문에<br>Compaction 작업이 얼마나 자주, 오랫동안 수행되는지 확인해야 한다.</p>
+<h2 id="G1-GC-XX-UseG1GC"><a href="#G1-GC-XX-UseG1GC" class="headerlink" title="G1 GC(-XX:+UseG1GC )"></a>G1 GC(-XX:+UseG1GC )</h2><p><img src="../images/g1_gc.jpeg" alt=""></p>
+<p>다음 그림에서 보다시피, G1 GC는 바둑판의 각 영역에 객체를 할당하고 GC를 실행한다.<br>그러다가, 해당 영역이 꽉 차면 다른 영역에서 객체를 할당하고 GC를 실행한다.<br>즉, 지금까지 설명한 Young의 세가지 영역에서 데이터가 Old 영역으로 이동하는 단계가 사라진 GC 방식이라고 이해하면 된다.<br>G1 GC는 장기적으로 말도 많고 탈도 많은 CMS GC를 대체하기 위해서 만들어 졌다.</p>
+<p>힙 영역이 매우 큰 머신(최소 4GB)에서 돌리기에 적합한 GC.<br>대신 CMS의 단점을 어느 정도는 극복해냈습니다.<br>힙에 영역(Region) 이라는 개념을 도입한 것인데요, 힙을 여러 개의 Region으로 나눕니다.<br>몇 몇 Region 은 Young Generation 영역으로 쓰이고, 나머지 몇 몇 Region 은 Old Generation 영역으로 쓰입니다.<br>Young Generation 영역을 정리하는 건 Parallel이나 CMS처럼 멀티쓰레드로 정리를 합니다.<br>(뭐 마찬가지로 지울건 지우고, 계속 쓰이고 있는건 Old Generation 영역으로 옮기겠죠.)<br>그리고, Old Generation 영역에 해당하는 Region이 여러 개 있을 텐데 CMS처럼 백그라운드 쓰레드로 이 영역들을 정리를 합니다.<br>그런데 CMS와 차이점은 중간 중간 쓸모없는 객체들을 쏙쏙 빼먹는게 아니라.<br>한 Region을 통째로 정리해 버립니다.<br>참조가 없는 객체들은 지우고, 사용 중인 객체는 다른 Region으로 고스란히 복사를 합니다.<br>이 다른 Region으로 사용 중인 객체만 옮기는 과정에서 차곡차곡 옮기므로 Compacting이 되므로 메모리 파편화 현상이 생기지 않는 것이죠!<br>그렇다면 CMS의 문제점이었던 CPU리소스를 많이 차지한다(1) 그리고 메모리파편화(2) 중에 메모리파편화를 해결한 GC가 되겠네요.</p>
+<p>참고) -XX:+UseStringDeduplication : <a href="https://dzone.com/articles/easy-change-to-reduce-memory-by-20" target="_blank" rel="noopener">https://dzone.com/articles/easy-change-to-reduce-memory-by-20</a></p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a href="https://d2.naver.com/helloworld/1329" target="_blank" rel="noopener">https://d2.naver.com/helloworld/1329</a><br><a href="https://12bme.tistory.com/57" target="_blank" rel="noopener">https://12bme.tistory.com/57</a><br><a href="https://okky.kr/article/379036" target="_blank" rel="noopener">https://okky.kr/article/379036</a><br><a href="http://wanzargen.tistory.com/17?category=700063" target="_blank" rel="noopener">http://wanzargen.tistory.com/17?category=700063</a></p>
+<p>tags:</p>
 
         </div>
         <footer class="article-footer">
@@ -181,7 +228,7 @@
 
 
 
-    <a data-url="http://kjs850.github.io/2018/11/22/kafka-설치-및-구동/" data-id="cjpm75tnj0007q2ypib8t4dbj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kjs850.github.io/2018/12/13/Java-Garbage-Collection/" data-id="cjpm75tn70000q2ypnlo0kz2y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -295,20 +342,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Kafka Consumer offset reset 하기
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/11/22/kafka-streams는-무엇인가/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/12/05/process-and-thread/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">kafka streams는 무엇인가?</p>
+        <p class="article-nav-title">process and thread</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -501,7 +538,7 @@
     var disqus_shortname = 'git-blog-2';
     
     
-    var disqus_url = 'http://kjs850.github.io/2018/11/22/kafka-설치-및-구동/';
+    var disqus_url = 'http://kjs850.github.io/2018/12/13/Java-Garbage-Collection/';
     
     (function() {
     var dsq = document.createElement('script');
