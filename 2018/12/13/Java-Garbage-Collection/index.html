@@ -20,7 +20,7 @@
 <meta property="og:description" content="date: 2018-12-11 14:17:31 가비지 컬렉션 과정 - Generational Garbage Collection가비지 컬렉터는 두 가지 가설 하에 만들어졌다  대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다. 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.  이러한 가설을 ‘weak generational hy">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://kjs850.github.io/2018/12/13/images/cms_gc.jpeg">
-<meta property="og:updated_time" content="2018-12-13T06:02:17.422Z">
+<meta property="og:updated_time" content="2018-12-13T09:33:02.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Garbage Collection">
 <meta name="twitter:description" content="date: 2018-12-11 14:17:31 가비지 컬렉션 과정 - Generational Garbage Collection가비지 컬렉터는 두 가지 가설 하에 만들어졌다  대부분의 객체는 금방 접근 불가능 상태(unreachable)가 된다. 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.  이러한 가설을 ‘weak generational hy">
@@ -154,7 +154,7 @@
                 
     <div class="article-date">
         <a href="/2018/12/13/Java-Garbage-Collection/" class="article-date">
-            <time datetime="2018-12-13T06:02:17.422Z" itemprop="datePublished">2018-12-13</time>
+            <time datetime="2018-12-13T09:33:02.872Z" itemprop="datePublished">2018-12-13</time>
         </a>
     </div>
 
@@ -178,7 +178,7 @@
 </li>
 <li><p>Old 영역(Old Generation 영역):<br>접근 불가능 상태로 되지 않아 Young 영역에서 살아남은 객체가 여기로 복사된다.<br>대부분 Young영역보다 크게 할당하며, 크기가 큰 만큼 Young 영역보다 GC는 적게 발생한다.<br>이 영역에서 객체가 사라질 때 Major GC(혹은 Full GC)가 발생한다고 말한다.</p>
 </li>
-<li><p>Permanent Generation 영역(이하 Perm 영역)<br>Method Area(메소드 영역, 클래스 파일의 바이트 코드들이 로드되는 곳)라고도 한다.<br>객체나 억류(intern)된 문자열 정보를 저장하는 곳이며, Old 영역에서 살아남은 객체가 영원히 남아 있는곳은 절대 아니다.<br>이 영역에서 GC가 발생할수도 있는데, 여기서 GC가 발생해도 Major GC의 횟수에 포함된다.</p>
+<li><p>Permanent Generation 영역(이하 Perm 영역)<br>Method Area(메소드 영역)라고도 한다.<br>객체나 억류(intern)된 문자열 정보를 저장하는 곳이며, Old 영역에서 살아남은 객체가 영원히 남아 있는곳은 절대 아니다.<br>이 영역에서 GC가 발생할수도 있는데, 여기서 GC가 발생해도 Major GC의 횟수에 포함된다.</p>
 </li>
 </ul>
 <p>“Old 영역에 있는 객체가 Young 영역의 객체를 참조하는 경우가 있을 때에는 어떻게 처리될까?”<br>카드 테이블이 존재하고 카드 테이블에는 Old영역에 있는 객체가 Young영역의 객체를 참조할 때마다 정보를 표시한다.<br>Young영역의 GC를 실행할때는 Old영역에 있는 모든 객체의 참조를 확인하지 않고, 카드 테이블만 뒤져서 GC 대상인지 식별한다.<br>카드 테이블은 write barrier를 사용하여 관리한다</p>
@@ -228,7 +228,7 @@
 
 
 
-    <a data-url="http://kjs850.github.io/2018/12/13/Java-Garbage-Collection/" data-id="cjpm75tn70000q2ypnlo0kz2y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kjs850.github.io/2018/12/13/Java-Garbage-Collection/" data-id="cjpmggyus0000uuyp550pgbh9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -342,6 +342,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/12/13/java-memory-구조/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            java memory 구조
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/12/05/process-and-thread/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -367,6 +377,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/12/13/java-memory-구조/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../images/jvm.png)" alt="java memory 구조" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/13/java-memory-구조/" class="title">java memory 구조</a></p>
+                            <p class="item-date"><time datetime="2018-12-13T10:23:07.769Z" itemprop="datePublished">2018-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/12/13/Java-Garbage-Collection/" class="thumbnail">
     
     
@@ -380,7 +410,7 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/12/13/Java-Garbage-Collection/" class="title">Java Garbage Collection</a></p>
-                            <p class="item-date"><time datetime="2018-12-13T06:02:17.422Z" itemprop="datePublished">2018-12-13</time></p>
+                            <p class="item-date"><time datetime="2018-12-13T09:33:02.872Z" itemprop="datePublished">2018-12-13</time></p>
                         </div>
                     </li>
                 
@@ -444,26 +474,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/11/25/Kafka-Consumer-offset-reset-하기/" class="title">Kafka Consumer offset reset 하기</a></p>
-                            <p class="item-date"><time datetime="2018-11-25T14:56:30.189Z" itemprop="datePublished">2018-11-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -476,7 +486,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
