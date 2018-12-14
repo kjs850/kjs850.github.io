@@ -6,25 +6,23 @@
     
 
     
-    <title>java memory 구조 | SeoWon💕, SeoHun💕, EunA💕</title>
+    <title>anaconda 세팅 | SeoWon💕, SeoHun💕, EunA💕</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="">
     
-    <meta name="description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
+    <meta name="description" content="date: 2018-12-14 17:08:00 anaconda 기본 세팅https://www.anaconda.com/ 에서 다운로드 받아서 설치. 123456789101112131415161718192021222324252627282930313233343536373839&amp;gt; conda -Vconda 4.5.11&amp;gt; conda create -n pyt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java memory 구조">
-<meta property="og:url" content="http://kjs850.github.io/2018/12/13/java-memory-구조/index.html">
+<meta property="og:title" content="anaconda 세팅">
+<meta property="og:url" content="http://kjs850.github.io/2018/12/14/anaconda-세팅/index.html">
 <meta property="og:site_name" content="SeoWon💕, SeoHun💕, EunA💕">
-<meta property="og:description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
+<meta property="og:description" content="date: 2018-12-14 17:08:00 anaconda 기본 세팅https://www.anaconda.com/ 에서 다운로드 받아서 설치. 123456789101112131415161718192021222324252627282930313233343536373839&amp;gt; conda -Vconda 4.5.11&amp;gt; conda create -n pyt">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://kjs850.github.io/2018/12/13/images/jvm.png">
-<meta property="og:updated_time" content="2018-12-13T10:25:17.378Z">
+<meta property="og:updated_time" content="2018-12-14T08:30:31.622Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java memory 구조">
-<meta name="twitter:description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
-<meta name="twitter:image" content="http://kjs850.github.io/2018/12/13/images/jvm.png">
+<meta name="twitter:title" content="anaconda 세팅">
+<meta name="twitter:description" content="date: 2018-12-14 17:08:00 anaconda 기본 세팅https://www.anaconda.com/ 에서 다운로드 받아서 설치. 123456789101112131415161718192021222324252627282930313233343536373839&amp;gt; conda -Vconda 4.5.11&amp;gt; conda create -n pyt">
     
 
     
@@ -136,14 +134,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-java-memory-구조" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-anaconda-세팅" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        java memory 구조
+        anaconda 세팅
         </h1>
     
 
@@ -153,8 +151,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/12/13/java-memory-구조/" class="article-date">
-            <time datetime="2018-12-13T10:25:17.378Z" itemprop="datePublished">2018-12-13</time>
+        <a href="/2018/12/14/anaconda-세팅/" class="article-date">
+            <time datetime="2018-12-14T08:30:31.622Z" itemprop="datePublished">2018-12-14</time>
         </a>
     </div>
 
@@ -165,28 +163,13 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>date: 2018-12-13 16:15:25</p>
-<h2 id="메모리-구조"><a href="#메모리-구조" class="headerlink" title="메모리 구조"></a>메모리 구조</h2><p><img src="../images/jvm.png" alt=""></p>
-<p>JVM은 OS로부터 받은 메모리를 나누어관리한다.<br>이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.</p>
-<ul>
-<li>Method Area(=Class Area)</li>
-<li>Stack Area</li>
-<li>Heap Area</li>
-<li>Native Method Stack Area</li>
-<li>PC Register</li>
-</ul>
-<p>크게는 메소드영역, 스택영역, 힙영역으로 나눈다.</p>
-<h2 id="메소드-영역"><a href="#메소드-영역" class="headerlink" title="메소드 영역"></a>메소드 영역</h2><p>클래스 파일의 바이트 코드가 로드되는 곳</p>
-<h2 id="스택-영역"><a href="#스택-영역" class="headerlink" title="스택 영역"></a>스택 영역</h2><p>지역변수와 매개변수가 저장된다.<br>쉽게 말해 프로그램의 실행과정에서 임시로 할당되고 그게 끝나면 소멸되는 것들이 저장된다.<br>즉 메소드가 호출될때마다 그 메소드의 로컬 변수를 준비하고, 메소드 호출이 끝나면 그 메소드를 위해 준비했던 모든변수가 스택에서 제거 된다.</p>
-<p>참조변수에 저장되는 메모리주소는 스택영역에 저장되지만, 그 주소가 가리키는 메모리는 모두 힙 영역에 저장된다.</p>
-<h2 id="힙-영역"><a href="#힙-영역" class="headerlink" title="힙 영역"></a>힙 영역</h2><p>흔히 코드에서 new 명령을 통해 생성된 인스턴스 변수가 놓인다.<br>힙 영역에 보관되는 메모리는 메소드 호출이 끝나도 사라지지 않고 유지된다.<br>언제까지?<br>가비지 컬렉터에 의해서 지워질때 까지..</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p>8가지 원시타입(primitive type).. byte, short, int, long, float, double, char, boolean..<br>을 제외한 그외의 타입으로 정의된 변수들은 모조리 레퍼런스 변수, 즉 참조변수이다.</p>
-<p>Primitive와 Boxed Primitives 둘 중 무엇을 사용해야 할까?<br>스택 영역에 저장되는 Primitive(기본자료형)과 힙영역에 저장되는 Boxed Primitives(객체형)간에는 메모리 효율과 접근속도면에서 Primitive Type이 뛰어나다.</p>
+            <p>date: 2018-12-14 17:08:00</p>
+<h2 id="anaconda-기본-세팅"><a href="#anaconda-기본-세팅" class="headerlink" title="anaconda 기본 세팅"></a>anaconda 기본 세팅</h2><p><a href="https://www.anaconda.com/" target="_blank" rel="noopener">https://www.anaconda.com/</a> 에서 다운로드 받아서 설치.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&gt; conda -V</span><br><span class="line">conda 4.5.11</span><br><span class="line"></span><br><span class="line">&gt; conda create -n python2.7 python=2.7</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /anaconda2/envs/python2.7</span><br><span class="line"></span><br><span class="line">  added / updated specs:</span><br><span class="line">    - python=2.7</span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate python2.7</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">&gt;conda env list</span><br><span class="line"> <span class="comment"># conda environments:</span></span><br><span class="line"> <span class="comment">#</span></span><br><span class="line"> base                  *  /anaconda2</span><br><span class="line"> python2.7                /anaconda2/envs/python2.7</span><br><span class="line"> </span><br><span class="line">&gt; conda activate python2.7</span><br><span class="line"></span><br><span class="line">(python2.7)&gt; python -V</span><br><span class="line">Python 2.7.15 :: Anaconda, Inc.</span><br><span class="line"></span><br><span class="line">&gt; conda deactivate</span><br><span class="line">(base)&gt; conda deactivate</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="텐서플로우-환경-만들기"><a href="#텐서플로우-환경-만들기" class="headerlink" title="텐서플로우 환경 만들기"></a>텐서플로우 환경 만들기</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; conda create -n tensorflow_py3.5 python=3.5</span><br><span class="line"></span><br><span class="line">&gt; conda env list</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /anaconda2</span><br><span class="line">py3.5                    /anaconda2/envs/py3.5</span><br><span class="line">python2.7                /anaconda2/envs/python2.7</span><br><span class="line">tensorflow_py2.7         /anaconda2/envs/tensorflow_py2.7</span><br><span class="line">tensorflow_py3.5         /anaconda2/envs/tensorflow_py3.5</span><br><span class="line"></span><br><span class="line">&gt; conda activate tensorflow_py3.5</span><br><span class="line"></span><br><span class="line">(tensorflow_py3.5) &gt; <span class="built_in">export</span> TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0-py3-none-any.whl</span><br><span class="line"></span><br><span class="line">(tensorflow_py3.5) &gt; pip3 install --upgrade <span class="variable">$TF_BINARY_URL</span></span><br><span class="line"></span><br><span class="line">Collecting tensorflow==0.9.0 from https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0-py3-none-any.whl</span><br><span class="line">  Downloading https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0-py3-none-any.whl (25.8MB)</span><br><span class="line">    100% |████████████████████████████████| 25.8MB 1.8MB/s</span><br><span class="line">Collecting protobuf==3.0.0b2 (from tensorflow==0.9.0)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/00/8e/9a3feb39d464eb7aacc108e6e6e1f2368ec741821486964c4cd0f41baabb/protobuf-3.0.0b2-py2.py3-none-any.whl (326kB)</span><br><span class="line">    100% |████████████████████████████████| 327kB 2.7MB/s</span><br><span class="line">Requirement already satisfied, skipping upgrade: wheel&gt;=0.26 <span class="keyword">in</span> /usr/<span class="built_in">local</span>/lib/python3.7/site-packages (from tensorflow==0.9.0) (0.32.2)</span><br><span class="line">Collecting numpy&gt;=1.10.1 (from tensorflow==0.9.0)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/3d/c3/a69406093c9a780a74964f41cd56b06c0346d686a9b3f392d123a663f5e0/numpy-1.15.4-cp37-cp37m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (24.5MB)</span><br><span class="line">    100% |████████████████████████████████| 24.5MB 1.7MB/s</span><br><span class="line">Collecting six&gt;=1.10.0 (from tensorflow==0.9.0)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl</span><br><span class="line">Requirement already satisfied, skipping upgrade: setuptools <span class="keyword">in</span> /usr/<span class="built_in">local</span>/lib/python3.7/site-packages (from protobuf==3.0.0b2-&gt;tensorflow==0.9.0) (40.5.0)</span><br><span class="line">Installing collected packages: six, protobuf, numpy, tensorflow</span><br><span class="line">Successfully installed numpy-1.15.4 protobuf-3.0.0b2 six-1.12.0 tensorflow-0.9.0</span><br><span class="line"></span><br><span class="line">(tensorflow_py3.5)&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
-<li><a href="http://limkydev.tistory.com/51" target="_blank" rel="noopener">http://limkydev.tistory.com/51</a></li>
-<li><a href="http://wanzargen.tistory.com/16?category=700063" target="_blank" rel="noopener">http://wanzargen.tistory.com/16?category=700063</a></li>
-<li><a href="http://wanzargen.tistory.com/17?category=700063" target="_blank" rel="noopener">http://wanzargen.tistory.com/17?category=700063</a> </li>
-<li><a href="http://www.jpstory.net/2013/02/07/primitive-vs-boxed-primitives/" target="_blank" rel="noopener">http://www.jpstory.net/2013/02/07/primitive-vs-boxed-primitives/</a> (자바 Primitive Type과 Boxed Primitives 둘 중 무엇을 사용할까?)</li>
+<li><a href="http://kamang-it.tistory.com/entry/Anaconda%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4-%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94%EB%B2%95%EA%B3%BC-%EC%82%AC%EC%9A%A9%EB%B2%95" target="_blank" rel="noopener">http://kamang-it.tistory.com/entry/Anaconda%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4-%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94%EB%B2%95%EA%B3%BC-%EC%82%AC%EC%9A%A9%EB%B2%95</a></li>
+<li><a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html" target="_blank" rel="noopener">https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html</a></li>
 </ul>
 <p>tags:</p>
 
@@ -196,7 +179,7 @@
 
 
 
-    <a data-url="http://kjs850.github.io/2018/12/13/java-memory-구조/" data-id="cjpnrw7460007fsypdx6yhzul" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kjs850.github.io/2018/12/14/anaconda-세팅/" data-id="cjpnrw73w0000fsypp7gcagpx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -310,20 +293,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/12/14/anaconda-세팅/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            anaconda 세팅
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/12/13/Java-Garbage-Collection/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/12/13/java-memory-구조/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Java Garbage Collection</p>
+        <p class="article-nav-title">java memory 구조</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -516,7 +489,7 @@
     var disqus_shortname = 'git-blog-2';
     
     
-    var disqus_url = 'http://kjs850.github.io/2018/12/13/java-memory-구조/';
+    var disqus_url = 'http://kjs850.github.io/2018/12/14/anaconda-세팅/';
     
     (function() {
     var dsq = document.createElement('script');
