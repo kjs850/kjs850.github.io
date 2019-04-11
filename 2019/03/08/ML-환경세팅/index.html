@@ -6,25 +6,23 @@
     
 
     
-    <title>java memory 구조 | SeoWon💕, SeoHun💕, EunA💕</title>
+    <title>ML 환경세팅 | SeoWon💕, SeoHun💕, EunA💕</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="">
     
-    <meta name="description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
+    <meta name="description" content="date: 2019-03-08 10:38:22 학습교재나의 첫 머신러닝/딥러닝 git clonehttps://github.com/wikibook/machine-learning conda를 이용한 환경 구성1234567891011121314151617181920212223242526272829303132333435363738jake.ko  ~/Dev/mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java memory 구조">
-<meta property="og:url" content="http://kjs850.github.io/2018/12/13/java-memory-구조/index.html">
+<meta property="og:title" content="ML 환경세팅">
+<meta property="og:url" content="http://kjs850.github.io/2019/03/08/ML-환경세팅/index.html">
 <meta property="og:site_name" content="SeoWon💕, SeoHun💕, EunA💕">
-<meta property="og:description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
+<meta property="og:description" content="date: 2019-03-08 10:38:22 학습교재나의 첫 머신러닝/딥러닝 git clonehttps://github.com/wikibook/machine-learning conda를 이용한 환경 구성1234567891011121314151617181920212223242526272829303132333435363738jake.ko  ~/Dev/mac">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://kjs850.github.io/2018/12/13/images/jvm.png">
-<meta property="og:updated_time" content="2018-12-13T10:25:17.378Z">
+<meta property="og:updated_time" content="2019-03-08T01:43:33.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java memory 구조">
-<meta name="twitter:description" content="date: 2018-12-13 16:15:25 메모리 구조 JVM은 OS로부터 받은 메모리를 나누어관리한다.이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.  Method Area(=Class Area) Stack Area Heap Area Native Method Stack Area PC Register">
-<meta name="twitter:image" content="http://kjs850.github.io/2018/12/13/images/jvm.png">
+<meta name="twitter:title" content="ML 환경세팅">
+<meta name="twitter:description" content="date: 2019-03-08 10:38:22 학습교재나의 첫 머신러닝/딥러닝 git clonehttps://github.com/wikibook/machine-learning conda를 이용한 환경 구성1234567891011121314151617181920212223242526272829303132333435363738jake.ko  ~/Dev/mac">
     
 
     
@@ -136,14 +134,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-java-memory-구조" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-ML-환경세팅" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        java memory 구조
+        ML 환경세팅
         </h1>
     
 
@@ -153,8 +151,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/12/13/java-memory-구조/" class="article-date">
-            <time datetime="2018-12-13T10:25:17.378Z" itemprop="datePublished">2018-12-13</time>
+        <a href="/2019/03/08/ML-환경세팅/" class="article-date">
+            <time datetime="2019-03-08T01:43:33.029Z" itemprop="datePublished">2019-03-08</time>
         </a>
     </div>
 
@@ -165,29 +163,13 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>date: 2018-12-13 16:15:25</p>
-<h2 id="메모리-구조"><a href="#메모리-구조" class="headerlink" title="메모리 구조"></a>메모리 구조</h2><p><img src="../images/jvm.png" alt=""></p>
-<p>JVM은 OS로부터 받은 메모리를 나누어관리한다.<br>이 메모리공간은… Runtime Data Area 라고 하는데 이를 5개 영역으로 쪼개서 관리한다.</p>
-<ul>
-<li>Method Area(=Class Area)</li>
-<li>Stack Area</li>
-<li>Heap Area</li>
-<li>Native Method Stack Area</li>
-<li>PC Register</li>
-</ul>
-<p>크게는 메소드영역, 스택영역, 힙영역으로 나눈다.</p>
-<h2 id="메소드-영역"><a href="#메소드-영역" class="headerlink" title="메소드 영역"></a>메소드 영역</h2><p>클래스 파일의 바이트 코드가 로드되는 곳</p>
-<h2 id="스택-영역"><a href="#스택-영역" class="headerlink" title="스택 영역"></a>스택 영역</h2><p>지역변수와 매개변수가 저장된다.<br>쉽게 말해 프로그램의 실행과정에서 임시로 할당되고 그게 끝나면 소멸되는 것들이 저장된다.<br>즉 메소드가 호출될때마다 그 메소드의 로컬 변수를 준비하고, 메소드 호출이 끝나면 그 메소드를 위해 준비했던 모든변수가 스택에서 제거 된다.</p>
-<p>참조변수에 저장되는 메모리주소는 스택영역에 저장되지만, 그 주소가 가리키는 메모리는 모두 힙 영역에 저장된다.</p>
-<h2 id="힙-영역"><a href="#힙-영역" class="headerlink" title="힙 영역"></a>힙 영역</h2><p>흔히 코드에서 new 명령을 통해 생성된 인스턴스 변수가 놓인다.<br>힙 영역에 보관되는 메모리는 메소드 호출이 끝나도 사라지지 않고 유지된다.<br>언제까지?<br>가비지 컬렉터에 의해서 지워질때 까지..</p>
-<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p>8가지 원시타입(primitive type).. byte, short, int, long, float, double, char, boolean..<br>을 제외한 그외의 타입으로 정의된 변수들은 모조리 레퍼런스 변수, 즉 참조변수이다.</p>
-<p>Primitive와 Boxed Primitives 둘 중 무엇을 사용해야 할까?<br>스택 영역에 저장되는 Primitive(기본자료형)과 힙영역에 저장되는 Boxed Primitives(객체형)간에는 메모리 효율과 접근속도면에서 Primitive Type이 뛰어나다.</p>
-<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
-<li><a href="http://limkydev.tistory.com/51" target="_blank" rel="noopener">http://limkydev.tistory.com/51</a></li>
-<li><a href="http://wanzargen.tistory.com/16?category=700063" target="_blank" rel="noopener">http://wanzargen.tistory.com/16?category=700063</a></li>
-<li><a href="http://wanzargen.tistory.com/17?category=700063" target="_blank" rel="noopener">http://wanzargen.tistory.com/17?category=700063</a> </li>
-<li><a href="http://www.jpstory.net/2013/02/07/primitive-vs-boxed-primitives/" target="_blank" rel="noopener">http://www.jpstory.net/2013/02/07/primitive-vs-boxed-primitives/</a> (자바 Primitive Type과 Boxed Primitives 둘 중 무엇을 사용할까?)</li>
-</ul>
+            <p>date: 2019-03-08 10:38:22</p>
+<h2 id="학습교재"><a href="#학습교재" class="headerlink" title="학습교재"></a>학습교재</h2><p>나의 첫 머신러닝/딥러닝</p>
+<h2 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h2><p><a href="https://github.com/wikibook/machine-learning" target="_blank" rel="noopener">https://github.com/wikibook/machine-learning</a></p>
+<h2 id="conda를-이용한-환경-구성"><a href="#conda를-이용한-환경-구성" class="headerlink" title="conda를 이용한 환경 구성"></a>conda를 이용한 환경 구성</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">jake.ko  ~/Dev/machine-learning   master  ll</span><br><span class="line">total 16</span><br><span class="line">drwxr-xr-x  28 jake.ko  staff   896  3  7 18:41 ..</span><br><span class="line">drwxr-xr-x   4 jake.ko  staff   128  3  7 18:41 data</span><br><span class="line">drwxr-xr-x  27 jake.ko  staff   864  3  7 18:41 jupyter_notebook</span><br><span class="line">-rw-r--r--   1 jake.ko  staff  3425  3  7 18:41 wikiml_mac.yml</span><br><span class="line">drwxr-xr-x   7 jake.ko  staff   224  3  7 18:41 .</span><br><span class="line">-rw-r--r--   1 jake.ko  staff  3475  3  7 18:41 wikiml_win.yml</span><br><span class="line">drwxr-xr-x  13 jake.ko  staff   416  3  7 18:46 .git</span><br><span class="line"> jake.ko  ~/Dev/machine-learning   master  vi wikiml_mac.yml</span><br><span class="line"> jake.ko  ~/Dev/machine-learning   master  conda env create -f wikiml_mac.yml</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">==&gt; WARNING: A newer version of conda exists. &lt;==</span><br><span class="line">  current version: 4.5.11</span><br><span class="line">  latest version: 4.6.7</span><br><span class="line">Please update conda by running</span><br><span class="line">    $ conda update -n base -c defaults conda</span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">xz-5.2.3             | 253 KB    | <span class="comment">############################################################ | 100%</span></span><br><span class="line">certifi-2018.4.16    | 142 KB    | <span class="comment">##################</span></span><br><span class="line"></span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">  Found existing installation: numpy 1.14.1</span><br><span class="line">    Uninstalling numpy-1.14.1:</span><br><span class="line">      Successfully uninstalled numpy-1.14.1</span><br><span class="line">Successfully installed autokeras-0.2.1 numpy-1.14.5 pillow-5.2.0 torch-0.4.0 torchvision-0.2.1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate wikiml</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"> jake.ko  ~/Dev/machine-learning   master </span><br></pre></td></tr></table></figure>
+<h2 id="실행-종료"><a href="#실행-종료" class="headerlink" title="실행/종료"></a>실행/종료</h2><p>conda activate wikiml</p>
+<p>jupyter notebook</p>
+<p>conda deactivate</p>
 <p>tags:</p>
 
         </div>
@@ -196,7 +178,7 @@
 
 
 
-    <a data-url="http://kjs850.github.io/2018/12/13/java-memory-구조/" data-id="cjuckafdt00072fypdj1plaii" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://kjs850.github.io/2019/03/08/ML-환경세팅/" data-id="cjuckafdo00032fypi4t3ajok" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -310,20 +292,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/12/14/anaconda-세팅/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/04/11/hadoop-docker-설치/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            anaconda 세팅
+            hadoop docker 설치
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2018/12/13/Java-Garbage-Collection/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/02/08/git-flow/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Java Garbage Collection</p>
+        <p class="article-nav-title">git-flow</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -516,7 +498,7 @@
     var disqus_shortname = 'git-blog-2';
     
     
-    var disqus_url = 'http://kjs850.github.io/2018/12/13/java-memory-구조/';
+    var disqus_url = 'http://kjs850.github.io/2019/03/08/ML-환경세팅/';
     
     (function() {
     var dsq = document.createElement('script');

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>hadoop docker 설치 | SeoWon💕, SeoHun💕, EunA💕</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="">
+    
+    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hadoop docker 설치">
+<meta property="og:url" content="http://kjs850.github.io/2019/04/11/hadoop-docker-설치/index.html">
+<meta property="og:site_name" content="SeoWon💕, SeoHun💕, EunA💕">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-11T11:30:51.786Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hadoop docker 설치">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="https://www.linkedin.com/in/jaesungko">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-hadoop-docker-설치" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        hadoop docker 설치
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/11/hadoop-docker-설치/" class="article-date">
+            <time datetime="2019-04-11T09:45:27.000Z" itemprop="datePublished">2019-04-11</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">✘ jake.ko  ~  docker run -it sequenceiq/hadoop-docker:2.7.0 /etc/bootstrap.sh -bash</span><br><span class="line">/</span><br><span class="line">Starting sshd:                                             [  OK  ]</span><br><span class="line">Starting namenodes on [0439286d2442]</span><br><span class="line">0439286d2442: starting namenode, logging to /usr/<span class="built_in">local</span>/hadoop/logs/hadoop-root-namenode-0439286d2442.out</span><br><span class="line">localhost: starting datanode, logging to /usr/<span class="built_in">local</span>/hadoop/logs/hadoop-root-datanode-0439286d2442.out</span><br><span class="line">Starting secondary namenodes [0.0.0.0]</span><br><span class="line">0.0.0.0: starting secondarynamenode, logging to /usr/<span class="built_in">local</span>/hadoop/logs/hadoop-root-secondarynamenode-0439286d2442.out</span><br><span class="line">starting yarn daemons</span><br><span class="line">starting resourcemanager, logging to /usr/<span class="built_in">local</span>/hadoop/logs/yarn--resourcemanager-0439286d2442.out</span><br><span class="line">localhost: starting nodemanager, logging to /usr/<span class="built_in">local</span>/hadoop/logs/yarn-root-nodemanager-0439286d2442.out</span><br><span class="line">bash-4.1<span class="comment">#</span></span><br><span class="line">bash-4.1<span class="comment"># cd $HADOOP_PREFIX</span></span><br><span class="line">bash-4.1<span class="comment"># pwd</span></span><br><span class="line">bash: ㅔ<span class="built_in">pwd</span>: <span class="built_in">command</span> not found</span><br><span class="line">bash-4.1<span class="comment"># pwd</span></span><br><span class="line">/usr/<span class="built_in">local</span>/hadoop</span><br><span class="line">bash-4.1<span class="comment"># bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.0.jar grep input output 'dfs[a-z.]+'</span></span><br><span class="line">19/04/11 07:12:01 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032</span><br><span class="line">19/04/11 07:12:03 INFO input.FileInputFormat: Total input paths to process : 31</span><br><span class="line">19/04/11 07:12:03 INFO mapreduce.JobSubmitter: number of splits:31</span><br><span class="line">19/04/11 07:12:04 INFO mapreduce.JobSubmitter: Submitting tokens <span class="keyword">for</span> job: job_1554980872030_0001</span><br><span class="line">19/04/11 07:12:04 INFO impl.YarnClientImpl: Submitted application application_1554980872030_0001</span><br><span class="line">19/04/11 07:12:04 INFO mapreduce.Job: The url to track the job: http://0439286d2442:8088/proxy/application_1554980872030_0001/</span><br><span class="line">19/04/11 07:12:04 INFO mapreduce.Job: Running job: job_1554980872030_0001</span><br><span class="line">19/04/11 07:12:14 INFO mapreduce.Job: Job job_1554980872030_0001 running <span class="keyword">in</span> uber mode : <span class="literal">false</span></span><br><span class="line">19/04/11 07:12:14 INFO mapreduce.Job:  map 0% reduce 0%</span><br><span class="line">19/04/11 07:12:30 INFO mapreduce.Job:  map 19% reduce 0%</span><br><span class="line">19/04/11 07:12:46 INFO mapreduce.Job:  map 35% reduce 0%</span><br><span class="line">19/04/11 07:12:51 INFO mapreduce.Job:  map 35% reduce 12%</span><br><span class="line">19/04/11 07:12:57 INFO mapreduce.Job:  map 52% reduce 12%</span><br><span class="line">19/04/11 07:13:00 INFO mapreduce.Job:  map 52% reduce 17%</span><br><span class="line">19/04/11 07:13:05 INFO mapreduce.Job:  map 61% reduce 17%</span><br><span class="line">19/04/11 07:13:06 INFO mapreduce.Job:  map 68% reduce 17%</span><br><span class="line">19/04/11 07:13:09 INFO mapreduce.Job:  map 68% reduce 23%</span><br><span class="line">19/04/11 07:13:14 INFO mapreduce.Job:  map 81% reduce 23%</span><br><span class="line">19/04/11 07:13:15 INFO mapreduce.Job:  map 84% reduce 24%</span><br><span class="line">19/04/11 07:13:18 INFO mapreduce.Job:  map 84% reduce 28%</span><br><span class="line">19/04/11 07:13:21 INFO mapreduce.Job:  map 87% reduce 28%</span><br><span class="line">19/04/11 07:13:24 INFO mapreduce.Job:  map 97% reduce 28%</span><br><span class="line">19/04/11 07:13:25 INFO mapreduce.Job:  map 100% reduce 30%</span><br><span class="line">19/04/11 07:13:27 INFO mapreduce.Job:  map 100% reduce 100%</span><br><span class="line">19/04/11 07:13:27 INFO mapreduce.Job: Job job_1554980872030_0001 completed successfully</span><br><span class="line">19/04/11 07:13:27 INFO mapreduce.Job: Counters: 49</span><br><span class="line">	File System Counters</span><br><span class="line">		FILE: Number of bytes <span class="built_in">read</span>=345</span><br><span class="line">		FILE: Number of bytes written=3697508</span><br><span class="line">		FILE: Number of <span class="built_in">read</span> operations=0</span><br><span class="line">		FILE: Number of large <span class="built_in">read</span> operations=0</span><br><span class="line">		FILE: Number of write operations=0</span><br><span class="line">		HDFS: Number of bytes <span class="built_in">read</span>=80529</span><br><span class="line">		HDFS: Number of bytes written=437</span><br><span class="line">		HDFS: Number of <span class="built_in">read</span> operations=96</span><br><span class="line">		HDFS: Number of large <span class="built_in">read</span> operations=0</span><br><span class="line">		HDFS: Number of write operations=2</span><br><span class="line">	Job Counters</span><br><span class="line">		Launched map tasks=31</span><br><span class="line">		Launched reduce tasks=1</span><br><span class="line">		Data-local map tasks=31</span><br><span class="line">		Total time spent by all maps <span class="keyword">in</span> occupied slots (ms)=304349</span><br><span class="line">		Total time spent by all reduces <span class="keyword">in</span> occupied slots (ms)=51216</span><br><span class="line">		Total time spent by all map tasks (ms)=304349</span><br><span class="line">		Total time spent by all reduce tasks (ms)=51216</span><br><span class="line">		Total vcore-seconds taken by all map tasks=304349</span><br><span class="line">		Total vcore-seconds taken by all reduce tasks=51216</span><br><span class="line">		Total megabyte-seconds taken by all map tasks=311653376</span><br><span class="line">		Total megabyte-seconds taken by all reduce tasks=52445184</span><br><span class="line">	Map-Reduce Framework</span><br><span class="line">		Map input records=2060</span><br><span class="line">		Map output records=24</span><br><span class="line">		Map output bytes=590</span><br><span class="line">		Map output materialized bytes=525</span><br><span class="line">		Input split bytes=3812</span><br><span class="line">		Combine input records=24</span><br><span class="line">		Combine output records=13</span><br><span class="line">		Reduce input groups=11</span><br><span class="line">		Reduce shuffle bytes=525</span><br><span class="line">		Reduce input records=13</span><br><span class="line">		Reduce output records=11</span><br><span class="line">		Spilled Records=26</span><br><span class="line">		Shuffled Maps =31</span><br><span class="line">		Failed Shuffles=0</span><br><span class="line">		Merged Map outputs=31</span><br><span class="line">		GC time elapsed (ms)=1257</span><br><span class="line">		CPU time spent (ms)=20870</span><br><span class="line">		Physical memory (bytes) snapshot=7554891776</span><br><span class="line">		Virtual memory (bytes) snapshot=23357546496</span><br><span class="line">		Total committed heap usage (bytes)=5315231744</span><br><span class="line">	Shuffle Errors</span><br><span class="line">		BAD_ID=0</span><br><span class="line">		CONNECTION=0</span><br><span class="line">		IO_ERROR=0</span><br><span class="line">		WRONG_LENGTH=0</span><br><span class="line">		WRONG_MAP=0</span><br><span class="line">		WRONG_REDUCE=0</span><br><span class="line">	File Input Format Counters</span><br><span class="line">		Bytes Read=76717</span><br><span class="line">	File Output Format Counters</span><br><span class="line">		Bytes Written=437</span><br><span class="line">19/04/11 07:13:28 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032</span><br><span class="line">19/04/11 07:13:28 INFO input.FileInputFormat: Total input paths to process : 1</span><br><span class="line">19/04/11 07:13:29 INFO mapreduce.JobSubmitter: number of splits:1</span><br><span class="line">19/04/11 07:13:29 INFO mapreduce.JobSubmitter: Submitting tokens <span class="keyword">for</span> job: job_1554980872030_0002</span><br><span class="line">19/04/11 07:13:29 INFO impl.YarnClientImpl: Submitted application application_1554980872030_0002</span><br><span class="line">19/04/11 07:13:29 INFO mapreduce.Job: The url to track the job: http://0439286d2442:8088/proxy/application_1554980872030_0002/</span><br><span class="line">19/04/11 07:13:29 INFO mapreduce.Job: Running job: job_1554980872030_0002</span><br><span class="line">19/04/11 07:13:40 INFO mapreduce.Job: Job job_1554980872030_0002 running <span class="keyword">in</span> uber mode : <span class="literal">false</span></span><br><span class="line">19/04/11 07:13:40 INFO mapreduce.Job:  map 0% reduce 0%</span><br><span class="line">19/04/11 07:13:46 INFO mapreduce.Job:  map 100% reduce 0%</span><br><span class="line">19/04/11 07:13:53 INFO mapreduce.Job:  map 100% reduce 100%</span><br><span class="line">19/04/11 07:13:53 INFO mapreduce.Job: Job job_1554980872030_0002 completed successfully</span><br><span class="line">19/04/11 07:13:53 INFO mapreduce.Job: Counters: 49</span><br><span class="line">	File System Counters</span><br><span class="line">		FILE: Number of bytes <span class="built_in">read</span>=291</span><br><span class="line">		FILE: Number of bytes written=230543</span><br><span class="line">		FILE: Number of <span class="built_in">read</span> operations=0</span><br><span class="line">		FILE: Number of large <span class="built_in">read</span> operations=0</span><br><span class="line">		FILE: Number of write operations=0</span><br><span class="line">		HDFS: Number of bytes <span class="built_in">read</span>=570</span><br><span class="line">		HDFS: Number of bytes written=197</span><br><span class="line">		HDFS: Number of <span class="built_in">read</span> operations=7</span><br><span class="line">		HDFS: Number of large <span class="built_in">read</span> operations=0</span><br><span class="line">		HDFS: Number of write operations=2</span><br><span class="line">	Job Counters</span><br><span class="line">		Launched map tasks=1</span><br><span class="line">		Launched reduce tasks=1</span><br><span class="line">		Data-local map tasks=1</span><br><span class="line">		Total time spent by all maps <span class="keyword">in</span> occupied slots (ms)=4172</span><br><span class="line">		Total time spent by all reduces <span class="keyword">in</span> occupied slots (ms)=4358</span><br><span class="line">		Total time spent by all map tasks (ms)=4172</span><br><span class="line">		Total time spent by all reduce tasks (ms)=4358</span><br><span class="line">		Total vcore-seconds taken by all map tasks=4172</span><br><span class="line">		Total vcore-seconds taken by all reduce tasks=4358</span><br><span class="line">		Total megabyte-seconds taken by all map tasks=4272128</span><br><span class="line">		Total megabyte-seconds taken by all reduce tasks=4462592</span><br><span class="line">	Map-Reduce Framework</span><br><span class="line">		Map input records=11</span><br><span class="line">		Map output records=11</span><br><span class="line">		Map output bytes=263</span><br><span class="line">		Map output materialized bytes=291</span><br><span class="line">		Input split bytes=133</span><br><span class="line">		Combine input records=0</span><br><span class="line">		Combine output records=0</span><br><span class="line">		Reduce input groups=5</span><br><span class="line">		Reduce shuffle bytes=291</span><br><span class="line">		Reduce input records=11</span><br><span class="line">		Reduce output records=11</span><br><span class="line">		Spilled Records=22</span><br><span class="line">		Shuffled Maps =1</span><br><span class="line">		Failed Shuffles=0</span><br><span class="line">		Merged Map outputs=1</span><br><span class="line">		GC time elapsed (ms)=45</span><br><span class="line">		CPU time spent (ms)=1480</span><br><span class="line">		Physical memory (bytes) snapshot=408469504</span><br><span class="line">		Virtual memory (bytes) snapshot=1452711936</span><br><span class="line">		Total committed heap usage (bytes)=274726912</span><br><span class="line">	Shuffle Errors</span><br><span class="line">		BAD_ID=0</span><br><span class="line">		CONNECTION=0</span><br><span class="line">		IO_ERROR=0</span><br><span class="line">		WRONG_LENGTH=0</span><br><span class="line">		WRONG_MAP=0</span><br><span class="line">		WRONG_REDUCE=0</span><br><span class="line">	File Input Format Counters</span><br><span class="line">		Bytes Read=437</span><br><span class="line">	File Output Format Counters</span><br><span class="line">		Bytes Written=197</span><br><span class="line">bash-4.1<span class="comment"># bin/hdfs dfs -cat output/*</span></span><br><span class="line">6	dfs.audit.logger</span><br><span class="line">4	dfs.class</span><br><span class="line">3	dfs.server.namenode.</span><br><span class="line">2	dfs.period</span><br><span class="line">2	dfs.audit.log.maxfilesize</span><br><span class="line">2	dfs.audit.log.maxbackupindex</span><br><span class="line">1	dfsmetrics.log</span><br><span class="line">1	dfsadmin</span><br><span class="line">1	dfs.servers</span><br><span class="line">1	dfs.replication</span><br><span class="line">1	dfs.file</span><br><span class="line">bash-4.1<span class="comment"># bin/hdfs dfs -ls</span></span><br><span class="line">Found 2 items</span><br><span class="line">drwxr-xr-x   - root supergroup          0 2015-05-16 05:43 input</span><br><span class="line">drwxr-xr-x   - root supergroup          0 2019-04-11 07:13 output</span><br><span class="line">bash-4.1<span class="comment"># bin/hdfs dfs -ls output/</span></span><br><span class="line">Found 2 items</span><br><span class="line">-rw-r--r--   1 root supergroup          0 2019-04-11 07:13 output/_SUCCESS</span><br><span class="line">-rw-r--r--   1 root supergroup        197 2019-04-11 07:13 output/part-r-00000</span><br><span class="line">bash-4.1<span class="comment"># bin/hdfs dfs -cat output/part-r-00000</span></span><br><span class="line">6	dfs.audit.logger</span><br><span class="line">4	dfs.class</span><br><span class="line">3	dfs.server.namenode.</span><br><span class="line">2	dfs.period</span><br><span class="line">2	dfs.audit.log.maxfilesize</span><br><span class="line">2	dfs.audit.log.maxbackupindex</span><br><span class="line">1	dfsmetrics.log</span><br><span class="line">1	dfsadmin</span><br><span class="line">1	dfs.servers</span><br><span class="line">1	dfs.replication</span><br><span class="line">1	dfs.file</span><br><span class="line">bash-4.1<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>출처 : </p>
+<ul>
+<li><a href="https://ahea.wordpress.com/2017/07/18/docker-%EC%97%90%EC%84%9C-hadoop-%EC%9B%8C%EB%93%9C-%EC%B9%B4%EC%9A%B4%ED%8A%B8-%EC%98%88%EC%A0%9C%EB%A5%BC-%EB%8F%8C%EB%A0%A4%EB%B3%B4%EC%9E%90/" target="_blank" rel="noopener">https://ahea.wordpress.com/2017/07/18/docker-%EC%97%90%EC%84%9C-hadoop-%EC%9B%8C%EB%93%9C-%EC%B9%B4%EC%9A%B4%ED%8A%B8-%EC%98%88%EC%A0%9C%EB%A5%BC-%EB%8F%8C%EB%A0%A4%EB%B3%B4%EC%9E%90/</a></li>
+<li><a href="https://hub.docker.com/r/sequenceiq/hadoop-docker" target="_blank" rel="noopener">https://hub.docker.com/r/sequenceiq/hadoop-docker</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://kjs850.github.io/2019/04/11/hadoop-docker-설치/" data-id="cjuckafg9000e2fyp2df0n66k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/@kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/kjs850" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/03/08/ML-환경세팅/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ML 환경세팅</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/04/11/hadoop-docker-설치/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/04/11/hadoop-docker-설치/" class="title">hadoop docker 설치</a></p>
+                            <p class="item-date"><time datetime="2019-04-11T09:45:27.000Z" itemprop="datePublished">2019-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/08/ML-환경세팅/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/03/08/ML-환경세팅/" class="title">ML 환경세팅</a></p>
+                            <p class="item-date"><time datetime="2019-03-08T01:43:33.029Z" itemprop="datePublished">2019-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/02/08/git-flow/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/02/08/git-flow/" class="title">git-flow</a></p>
+                            <p class="item-date"><time datetime="2019-02-08T04:38:13.488Z" itemprop="datePublished">2019-02-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/19/spark-basic-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/19/spark-basic-1/" class="title">spark basic 1</a></p>
+                            <p class="item-date"><time datetime="2018-12-19T09:06:44.532Z" itemprop="datePublished">2018-12-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/14/mac-keras-설치/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/14/mac-keras-설치/" class="title">mac keras 설치</a></p>
+                            <p class="item-date"><time datetime="2018-12-14T10:40:18.707Z" itemprop="datePublished">2018-12-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 고재성</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'git-blog-2';
+    
+    
+    var disqus_url = 'http://kjs850.github.io/2019/04/11/hadoop-docker-설치/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
